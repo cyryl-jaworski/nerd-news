@@ -5,7 +5,7 @@ param (
 function SimulateTyping {
     param(
         [string]$Text,
-        [int]$DelayMilliseconds = 50
+        [int]$DelayMilliseconds = 20
     )
     
     $Chars = $Text.ToCharArray()
