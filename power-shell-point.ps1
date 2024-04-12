@@ -47,6 +47,62 @@ function DisplayHeader2 {
     Write-Host ""
 }
 
+# function Show-NerdNews {
+#     $colors = @("Red", "Yellow", "Green", "Blue", "Magenta", "Cyan", "White")
+#     $news = "NERD-NEWS"
+#     $length = $news.Length
+#     $delay = 200
+#     $verticalStep = 2
+#     $verticalDirection = 1
+#     $position = 0
+
+#     while ($true) {
+#         Clear-Host
+
+#         # Detect if spacebar is pressed
+#         if ([System.Console]::KeyAvailable) {
+#             $key = [System.Console]::ReadKey($true)
+#             if ($key.Key -eq "Spacebar") {
+#                 break
+#             }
+#         }
+
+#         $color = Get-Random -InputObject $colors
+#         $paddingTop = Get-Random -Minimum 1 -Maximum 10
+#         $paddingBottom = 10 - $paddingTop
+
+#         for ($i = 0; $i -lt $paddingTop; $i++) {
+#             Write-Host ""
+#         }
+
+#         for ($i = 0; $i -lt $verticalStep; $i++) {
+#             Write-Host (" " * $position) -NoNewline
+#             Write-Host -ForegroundColor $color $news
+#             $position += 1
+#             Start-Sleep -Milliseconds $delay
+#             Clear-Host
+
+#             # Detect if spacebar is pressed
+#             if ([System.Console]::KeyAvailable) {
+#                 $key = [System.Console]::ReadKey($true)
+#                 if ($key.Key -eq "Spacebar") {
+#                     break
+#                 }
+#             }
+#         }
+
+#         for ($i = 0; $i -lt $paddingBottom; $i++) {
+#             Write-Host ""
+#         }
+
+#         if ($position -ge $Host.UI.RawUI.WindowSize.Width - $length) {
+#             $position = 0
+#         }
+#     }
+# }
+
+# Show-NerdNews
+
 # Iterate through each line in the markdown content
 foreach ($line in $markdownContent) {
     if ($line -match '^# ') {
