@@ -18,6 +18,58 @@ function SimulateTyping {
     Write-Host
 }
 
+function Draw-Plane {
+
+    
+}
+
+function Draw-Fire-1 {
+    Write-Host
+    [int]$DelayMilliseconds = 50
+    $FireCount = 0
+    while ($FireCount -lt 15) {
+            if(($FireCount -eq 3)  -or ($FireCount -eq 8) -or ($FireCount -eq 13)){
+                Write-Host -NoNewline `u{1F525}
+            } else {
+                Write-Host -NoNewline "  "
+            }
+          
+            Start-Sleep -Milliseconds $DelayMilliseconds
+            $FireCount++
+    }
+}
+
+function Draw-Fire-2 {
+    Write-Host
+    [int]$DelayMilliseconds = 50
+    $FireCount = 0
+    while ($FireCount -lt 15) {
+            if(($FireCount -eq 2)  -or ($FireCount -eq 3) -or ($FireCount -eq 4) -or
+            ($FireCount -eq 7)  -or ($FireCount -eq 8) -or ($FireCount -eq 9) -or
+            ($FireCount -eq 12)  -or ($FireCount -eq 13) -or ($FireCount -eq 14)){
+                Write-Host -NoNewline `u{1F525}
+            } else {
+                Write-Host -NoNewline "  "
+            }
+          
+            Start-Sleep -Milliseconds $DelayMilliseconds
+            $FireCount++
+    
+}
+}
+
+function Draw-Fire-3 {
+    Write-Host
+    [int]$DelayMilliseconds = 50
+    $FireCount = 0
+    while ($FireCount -lt 16) {
+  
+            Write-Host -NoNewline `u{1F525}
+            Start-Sleep -Milliseconds $DelayMilliseconds
+            $FireCount++
+    }
+}
+
 # Read the markdown file
 $markdownContent = Get-Content $markdownFilePath
 
@@ -37,6 +89,9 @@ function DisplayHeader1 {
     SimulateTyping $args[0]#.Trim()
     Write-Host ""
     Write-Host ""
+    Draw-Fire-1
+    Draw-Fire-2
+    Draw-Fire-3
 }
 
 # Function to display header 2
@@ -46,62 +101,6 @@ function DisplayHeader2 {
     SimulateTyping $args[0]#.Trim()
     Write-Host ""
 }
-
-# function Show-NerdNews {
-#     $colors = @("Red", "Yellow", "Green", "Blue", "Magenta", "Cyan", "White")
-#     $news = "NERD-NEWS"
-#     $length = $news.Length
-#     $delay = 200
-#     $verticalStep = 2
-#     $verticalDirection = 1
-#     $position = 0
-
-#     while ($true) {
-#         Clear-Host
-
-#         # Detect if spacebar is pressed
-#         if ([System.Console]::KeyAvailable) {
-#             $key = [System.Console]::ReadKey($true)
-#             if ($key.Key -eq "Spacebar") {
-#                 break
-#             }
-#         }
-
-#         $color = Get-Random -InputObject $colors
-#         $paddingTop = Get-Random -Minimum 1 -Maximum 10
-#         $paddingBottom = 10 - $paddingTop
-
-#         for ($i = 0; $i -lt $paddingTop; $i++) {
-#             Write-Host ""
-#         }
-
-#         for ($i = 0; $i -lt $verticalStep; $i++) {
-#             Write-Host (" " * $position) -NoNewline
-#             Write-Host -ForegroundColor $color $news
-#             $position += 1
-#             Start-Sleep -Milliseconds $delay
-#             Clear-Host
-
-#             # Detect if spacebar is pressed
-#             if ([System.Console]::KeyAvailable) {
-#                 $key = [System.Console]::ReadKey($true)
-#                 if ($key.Key -eq "Spacebar") {
-#                     break
-#                 }
-#             }
-#         }
-
-#         for ($i = 0; $i -lt $paddingBottom; $i++) {
-#             Write-Host ""
-#         }
-
-#         if ($position -ge $Host.UI.RawUI.WindowSize.Width - $length) {
-#             $position = 0
-#         }
-#     }
-# }
-
-# Show-NerdNews
 
 # Iterate through each line in the markdown content
 foreach ($line in $markdownContent) {
