@@ -14,7 +14,20 @@ $nearestFriday = $currentDate.AddDays($daysUntilFriday)
 # Create the file name in the format [year]-[month]-[day-of-the-nearest-Friday].md
 $fileName = "{0:yyyy-MM-dd}.md" -f $nearestFriday
 
-# Create the Markdown file
-New-Item -ItemType File -Path $fileName
+# Create the content for the Markdown file
+$mdContent = @"
+# Nerd-news $($nearestFriday.ToString("yyyy-MM-dd"))
+
+## AI news 
+
+## Cloud news
+
+## Random news
+
+## Interesting links
+"@
+
+# Create the Markdown file and add content
+Set-Content -Path $fileName -Value $mdContent
 
 Write-Host "Markdown file created with name: $fileName"
