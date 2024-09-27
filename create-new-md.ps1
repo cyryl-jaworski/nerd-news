@@ -20,6 +20,8 @@ $mdContent = @"
 
 ## AI news 
 
+## Security news
+
 ## Cloud news
 
 ## Random news
