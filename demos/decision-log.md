@@ -1,0 +1,4 @@
+FixMatch: Swipe your way to home perfection. Connect instantly with skilled artisans, woodworkers, and specialized repair experts in your area. Whether you need custom cabinetry, intricate woodworking, hydraulic system repairs, or a complete home renovation - find the perfect match for your project.
+Browse verified professionals with photo galleries of their work, specialties, and real customer reviews. Craftspeople can swipe right on projects that match their expertise, from custom furniture builds to complex hydraulic system maintenance. Set your budget, timeline, and requirements, then match with experts who can bring your vision to life.
+Skip the endless Google searches and unreturned calls. Whether you're dreaming of bespoke wooden furniture or need urgent repairs for your hydraulic elevator, find your perfect craftsperson with a swipe.
+
